@@ -9,6 +9,7 @@
   :dependencies [[org.clojure/clojure "1.9.0-alpha17"]
                  [org.clojure/clojurescript "1.9.908"]
                  [org.clojure/core.async  "0.3.443"]
+                 [hiccup "1.0.5"]
                  [rum "0.10.8"]]
 
   :plugins [[lein-figwheel "0.5.13"]
@@ -63,7 +64,7 @@
 
              ;; doesn't work for you just run your own server :) (see lein-ring)
 
-             ;; :ring-handler hello_world.server/handler
+             :ring-handler yc-app.server/handler
 
              ;; To be able to open files in your editor from the heads up display
              ;; you will need to put a script on your path.

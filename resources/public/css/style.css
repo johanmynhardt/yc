@@ -1,2 +1,53 @@
 /* some style */
 
+html {
+  font-family: ubuntu, sans;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+}
+
+.flex {
+    display: flex;
+    flex: 1;
+}
+
+.horizontal {
+    flex-direction: row;
+}
+
+.vertical {
+    flex-direction: column;
+}
+
+#app {
+    /*padding: 1em;*/
+}
+
+.load-wrapper {
+    text-align: center;
+    margin: 1em;
+    border: 1px solid red;
+    display: block;
+    height: 100vh;
+}
+
+.loader-container {
+    
+}
+
+.loader {
+    border: 8px solid #f3f3f3; /* Light grey */
+    border-top: 8px solid #ed1966; /* YC Pink */
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
