@@ -2,13 +2,15 @@
   (:require [hiccup.page :refer :all]))
 
 (defn load-widget [&{:keys [heading sub-heading]}]
-   [:div.load-wrapper
-          [:div.load-container.flex.horizontal
-           [:div.flex]
-           [:div.loader]
-           [:div.flex]]
-    (if-not nil? heading [:h2 heading])
-    (if-not nil? sub-heading [:p sub-heading])])
+  [:div.load-wrapper.flex.vertical
+   [:div.flex]
+   [:div.load-container.flex.horizontal
+    [:div.flex]
+    [:div.loader]
+    [:div.flex]]
+   (if-not nil? heading [:h2 heading])
+   (if-not nil? sub-heading [:p sub-heading])
+   [:div.flex]])
 
 (defn handler [request]
   {:status 200

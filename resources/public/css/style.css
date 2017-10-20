@@ -1,43 +1,32 @@
 /* some style */
-
 html {
-  font-family: ubuntu, sans;
+    font-family: ubuntu, sans;
 }
-
 html, body {
     margin: 0;
     padding: 0;
 }
-
 .flex {
     display: flex;
     flex: 1;
 }
-
 .horizontal {
     flex-direction: row;
 }
-
 .vertical {
     flex-direction: column;
 }
-
 #app {
     /*padding: 1em;*/
 }
-
 .load-wrapper {
     text-align: center;
-    margin: 1em;
-    border: 1px solid red;
+    margin: 3em;
+    border: none;
     display: block;
-    height: 100vh;
 }
-
 .loader-container {
-    
 }
-
 .loader {
     border: 8px solid #f3f3f3; /* Light grey */
     border-top: 8px solid #ed1966; /* YC Pink */
@@ -46,8 +35,63 @@ html, body {
     height: 60px;
     animation: spin 2s linear infinite;
 }
-
 @keyframes spin {
     0% { transform: rotate(0deg); }
     100% { transform: rotate(360deg); }
+}
+.allcaps {
+    text-transform: uppercase;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+header {
+    background-color: black;
+    color: white;
+    position: fixed;
+    left: 0;
+    top: 0;
+    margin-bottom: 50px;
+    border: 0px solid red;
+    height: 50px;
+    max-height: 50px;
+    overflow: hidden;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+}
+header button {
+    color: white;
+    background-color: transparent;
+    border: 0;
+}
+header button:before {
+    font-size: 25pt;
+    content: "≡";
+}
+.header-button {
+    width: 50px;
+}
+
+header div {
+    transform: translate(0, 32%);
+    display: block-inline;
+    vertical-align: middle;
+    height: 50px;
+    margin: 0 0.2em;
+}
+
+div#content-wrapper {
+    margin-top: 60px;
+    margin-left: 1em;
+    margin-right: 1em;
+}
+
+@media (min-width: 500px) {
+    div#content-wrapper {
+        margin-left: 5em;
+        margin-right: 5em;
+    }
 }

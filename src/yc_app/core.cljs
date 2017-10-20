@@ -3,19 +3,32 @@
 
 (enable-console-print!)
 
-(println "This text is printed from src/yc-app/core.cljs. Go ahead and edit it and see reloading in action.")
-
 ;; define your app data so that it doesn't get over-written on reload
 
 (defonce app-state (atom {:text "Hello world!"}))
 
+(rum/defc menu-button []
+  [:button.header-button {:onClick #(js/console.log "echo")}])
 
-(rum/defc hello-world []
+(rum/defc widget-yc []
+  [:div.allcaps.bold "Yuppiechef"])
+
+(rum/defc yc []
   [:div
-   [:h1 (:text @app-state)]
-   [:h3 "Edit this and watch it change!"]])
+   [:header#main-menu
+    (menu-button)
+    (widget-yc)
+    [:div.flex]
+    [:div "bar"]
+    [:div "echo"]
+    [:div ""]]
+   [:div#content-wrapper
+    [:h1 (:text @app-state)]
+    [:h3 "Edit this and watch it change!"]
+    (for [x (range 0 15)]
+      [:p "a generated parapgraph " x])]])
 
-(rum/mount (hello-world)
+(rum/mount (yc)
            (. js/document (getElementById "app")))
 
 (defn on-js-reload []
