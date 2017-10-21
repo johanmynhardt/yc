@@ -1,16 +1,10 @@
 (ns yc-app.pages
-  (:require [yc-app.navigation :refer [route-for]]))
-
-(defn button [text]
-  [:div.paper-button text])
-
-(defn focus-widget [text]
-  [:div.focus-widget
-   (button text)])
+  (:require [yc-app.navigation :refer [route-for]]
+            [yc-app.components :as ycc]))
 
 (defn home []
   [:div
-   (focus-widget "Some text")
+   (ycc/focus-widget "Some text")
    [:br]
    [:a {:href "/does-not-exist"} "/does-not-exist"]])
 
