@@ -10,6 +10,9 @@
 (rum/defc menu-button []
   [:button.header-button {:onClick #(js/console.log "echo")}])
 
+(rum/defc help-button []
+  [:div.fa.fa-question-circle-o.fa-lg])
+
 (rum/defc search-button []
   [:button {:onClick #(js/alert "Launch Search")} [:i.fa.fa-search.fa-lg]])
 
@@ -28,14 +31,14 @@
      [:div "Subscriptions"]
      [:div "Trade"]]
     [:div.flex]
-    [:div "bar"]
+    (comment  [:div.inline-group
+               (help-button)])
     (search-button)
-    [:div ""]]
+    [:div]
+    [:div]]
    [:div#content-wrapper
-    [:h1 (:text @app-state)]
-    [:h3 "Edit this and watch it change!"]
-    (for [x (range 0 15)]
-      [:p "a generated parapgraph " x])]])
+    [:div "Page"]]])
+
 
 (rum/mount (yc)
            (. js/document (getElementById "app")))
