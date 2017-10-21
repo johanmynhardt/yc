@@ -10,6 +10,9 @@
 (rum/defc menu-button []
   [:button.header-button {:onClick #(js/console.log "echo")}])
 
+(rum/defc search-button []
+  [:button {:onClick #(js/alert "Launch Search")} [:i.fa.fa-search.fa-lg]])
+
 (rum/defc widget-yc []
   [:div.allcaps.bold "Yuppiechef"])
 
@@ -26,7 +29,7 @@
      [:div "Trade"]]
     [:div.flex]
     [:div "bar"]
-    [:div "echo"]
+    (search-button)
     [:div ""]]
    [:div#content-wrapper
     [:h1 (:text @app-state)]
