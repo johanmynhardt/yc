@@ -89,6 +89,7 @@ header {
 
 div#content-wrapper {
     margin-top: 60px;
+    padding-top: 0.3em;
     margin-left: 1em;
     margin-right: 1em;
 }
@@ -100,6 +101,19 @@ div#content-wrapper {
 .inline-group>div {
     display: inline-flex;
     padding: 0 1em;
+}
+
+/* Focus Widget (Knives graphic with button) */
+.focus-widget {
+    width: 100%;
+    min-height: 150px;
+    border-radius: 0.2em;
+    box-shadow: 0 3px 10px 1px rgba(0, 0, 0, 0.5); 
+}
+
+.focus-widget>div {
+    margin: 0em;
+    padding: 0.5em;
 }
 
 @media (max-width: 640px) {
@@ -114,6 +128,7 @@ div#content-wrapper {
 
 @media (min-width: 640px) {
     div#content-wrapper {
+        padding-top: 3em;
         margin-left: 5em;
         margin-right: 5em;
     }
