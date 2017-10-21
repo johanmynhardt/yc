@@ -17,7 +17,7 @@
    :body (html5 [:head
                  [:meta {:charset "UTF-8"}]
                  [:meta {:name "viewport" :content "width=device-width, initial-scale=1"}]
-                 (include-css "css/style.css")
+                 (include-css "css/style.css" "css/font-awesome.min.css")
                  [:link {:rel "icon" :href "img/favicon.ico"}]]
                 [:body
                  [:div#app
