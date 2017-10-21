@@ -31,7 +31,7 @@
 (rum/defc widget-yc []
   [:div.allcaps.bold "Yuppiechef"])
 
-(rum/defc yc []
+(rum/defc app < rum/reactive []
   [:div
    [:header#main-menu
     (menu-button)
@@ -49,15 +49,12 @@
     [:div]
     [:div]]
    [:div#content-wrapper
-    [:div "Page"]]])
+    (page-contents (get-in (rum/react app-state) [:route :current-page]))]])
 
 
 
 (defn on-js-reload []
-  ;; optionally touch your app-state to force rerendering depending on
-  ;; your application
-  ;; (swap! app-state update-in [:__figwheel_counter] inc)
-  (rum/mount (yc)
+  (rum/mount (app)
              (. js/document (getElementById "app")))
 )
 
@@ -67,9 +64,8 @@
                    (let [match (bidi/match-route navigation/app-routes path)
                          current-page (:handler match)
                          route-params (:route-params match)]
-                     (println "current-page: " current-page)
-                     (comment  (session/put! :route {:current-page current-page
-                                                     :route-params route-params}))))
+                     (swap! app-state assoc :route {:current-page current-page
+                                                    :route-params route-params})))
     :path-exists? (fn [path]
                     (boolean (bidi/match-route navigation/app-routes path)))})
   (accountant/dispatch-current!)
