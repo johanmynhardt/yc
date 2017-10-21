@@ -18,6 +18,12 @@
    [:header#main-menu
     (menu-button)
     (widget-yc)
+    [:div.inline-group
+     [:div "Shop"]
+     [:div "Registry"]
+     [:div "Gifting"]
+     [:div "Subscriptions"]
+     [:div "Trade"]]
     [:div.flex]
     [:div "bar"]
     [:div "echo"]
