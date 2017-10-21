@@ -2,7 +2,6 @@
     (:require [rum.core :as rum]
               [accountant.core :as accountant]
               [bidi.bidi :as bidi]
-              [secretary.core :as secretary :refer-macros [defroute]]
               [yc-app.navigation :as navigation]
               [yc-app.pages :as pages]))
 

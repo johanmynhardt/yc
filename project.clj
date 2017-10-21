@@ -12,7 +12,6 @@
                  [hiccup "1.0.5"]
                  [rum "0.10.8"]
                  [bidi "2.1.2"]
-                 [secretary "1.2.3"]
                  [venantius/accountant "0.2.0"]]
 
   :plugins [[lein-figwheel "0.5.13"]
