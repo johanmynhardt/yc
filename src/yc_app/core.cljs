@@ -34,6 +34,7 @@
     [:div.flex]
     (comment  [:div.inline-group
                (ycc/help-button)])
+    (ycc/user-button)
     (ycc/shop-button)
     (ycc/search-button)
     [:div]]

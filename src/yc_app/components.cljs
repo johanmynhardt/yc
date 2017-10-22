@@ -1,5 +1,6 @@
 (ns yc-app.components
-  (:require [rum.core :as rum]))
+  (:require [rum.core :as rum]
+            [accountant.core :as accountant]))
 
 (defn button [text]
   [:div.light-button text])
@@ -14,6 +15,17 @@
 (defn close-sidebar []
   (swap! yc-app.core/app-state assoc :show-sidebar false))
 
+;; ------------- SIDE MENU ------------------------
+(def action-items
+  [{:text "Shipping to" :icon-div ':div.fa.fa-flag.fa-fw}
+   {:text "Need Help?"  :icon-div ':div.fa.fa-question-circle.fa-fw}
+   {:text "Shop"        :icon-div ':div.fa.fa-shopping-cart.fa-fw}
+   {:text "Registry"    :icon-div ':div.fa.fa-heart.fa-fw}
+   {:text "Gifting"     :icon-div ':div.fa.fa-gift.fa-fw}
+   {:text "Subscriptions" :icon-div ':div.fa.fa-refresh.fa-fw}
+   {:text "Trade"       :icon-div ':div.fa.fa-briefcase.fa-fw}
+   ])
+
 (rum/defc side-menu []
   [:div#side-menu
    [:div.backdrop {:on-click close-sidebar
@@ -25,7 +37,18 @@
       [:div.fa.fa-close {:on-click close-sidebar}]]
      [:h3 "Anonymous"]
      [:p "Public User"]]
-    [:div#side-menu-content-wrapper.with-shadow.flex.vertical.scroll 
+    [:div#side-menu-content-wrapper.with-shadow.flex.vertical.scroll
+     (for [item action-items]
+       [:div {:on-click (fn [e] (close-sidebar) (accountant/navigate! (str "/action/" (:text item))))}
+        [:a.flex.horizontal 
+         [(:icon-div item)]
+         [:div.margin-left (:text item)]]])
+     
+     [:span.divider]
+     [:h3.margin-left.allcaps "Shop"]
+     [:span.divider]
+
+     ;; TODO: populate categories
      (for [it (range 0 40)]
        [:div [:a {:href (str "/menu-" it)} "item " it]])]]])
 
@@ -43,3 +66,8 @@
 
 (rum/defc widget-yc []
   [:div.allcaps.bold.padding-left "Yuppiechef"])
+
+(rum/defc user-button []
+  [:div.mw-640 
+   [:div.fa.fa-user.fa-fw {:on-click open-sidebar}]]
+  )

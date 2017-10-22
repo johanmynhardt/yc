@@ -193,11 +193,15 @@ div#content-wrapper {
 
 #side-menu-content-wrapper>div {
     padding: 1em;
-    border-bottom: 1px solid #eee;
+    border-bottom: 0px solid #eee;
 }
 
 [hidden] {
     display: none;
+}
+
+.divider {
+    border-bottom: 1px solid #eee;
 }
 
 .no-list {
@@ -211,6 +215,10 @@ div#content-wrapper {
 
 .padding-left {
     padding-left: 1em;
+}
+
+.margin-left {
+    margin-left: 1em;
 }
 
 nav#suggestions>ul {
@@ -275,6 +283,10 @@ nav#suggestions>ul>li>a:visited {
     .padding-left {
         padding-left: 0;
     }
+
+    .mw-640 {
+        display: none;
+    }
 }
 
 @media (min-width: 640px) {
@@ -295,4 +307,10 @@ nav#suggestions>ul>li>a:visited {
     #side-menu>div.backdrop {
         display: none;
     }
+
+    .mw-640 {
+        display: inherit;
+    }
 }
+
+
