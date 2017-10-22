@@ -221,6 +221,8 @@ div#content-wrapper {
     margin-left: 1em;
 }
 
+/* ---- nav#suggestions ---- */
+
 nav#suggestions>ul {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -246,6 +248,8 @@ nav#suggestions>ul>li>a {
 nav#suggestions>ul>li>a:visited {
     color: inherit;
 }
+
+/* ---- #check-list ---- */
 
 #check-list ul li {
     text-align: center;
@@ -287,13 +291,17 @@ nav#suggestions>ul>li>a:visited {
     .mw-640 {
         display: none;
     }
+
+    nav#sugestions {
+        
+    }
 }
 
 @media (min-width: 640px) {
     div#content-wrapper {
-        padding-top: 3em;
-        margin-left: 5em;
-        margin-right: 5em;
+        padding-top: 1em;
+        margin-left: 2em;
+        margin-right: 2em;
     }
 
     button.header-button {
@@ -308,9 +316,64 @@ nav#suggestions>ul>li>a:visited {
         display: none;
     }
 
+    .focus-widget {
+        min-height: 200px;
+        float:left;
+        width: calc(100% - 250px);
+    }
+
     .mw-640 {
         display: inherit;
     }
+
+    .min-width-640.hide {
+        display: none;
+    }
+
+    nav#suggestions>ul {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        grid-gap: 0.3em;
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    
+    nav#suggestions>ul>li {
+        margin-left: 1em;
+        margin-bottom: 0.3em;   
+    }
+
+    #check-list>ul {
+        margin-top: 0em;
+    }
+
+    #check-list>ul>li {
+        
+        margin-top: 1em;
+    }
 }
+
+@media (min-width: 1024px) {
+    div#content-wrapper {
+        padding-top: 3em;
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 900px;
+    }
+
+    #check-list>ul>li {
+        display: inline-block;
+        margin: 1em;
+    }
+
+    nav#suggestions>ul>li {
+        margin-left: 1em;
+        margin-bottom: 0.3em;   
+    }
+}
+
+
 
 

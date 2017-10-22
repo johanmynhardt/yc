@@ -7,7 +7,7 @@
 (defn home []
   [:div
    (ycc/focus-widget "See why we love them")
-   [:br]
+   [:br.min-width-640.hide]
    [:nav#suggestions
     [:ul
      [:li [:a {:href (route-for :shop-brand)} "Shop by " [:b "Brand"]]]
