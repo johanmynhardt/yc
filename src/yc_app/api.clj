@@ -3,11 +3,13 @@
 
 (defn categories [request]
   {:status 200
-   :body "Categories..."})
+   :headers {"Content-Type" "application/json"}
+   :body (slurp "src/yc_app/json/categorydb.json")})
 
 (defn products [request]
   {:status 200
-   :body "Products..."})
+   :headers {"Content-Type" "application/json"}
+   :body (slurp "src/yc_app/json/productdb.json")})
 
 (defn search [request]
   {:status 200
