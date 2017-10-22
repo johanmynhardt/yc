@@ -334,6 +334,10 @@ nav#suggestions>ul>li>a:visited {
         display: inline-block;
         padding: 1em;
     }
+    nav#top-menu>ul>li:hover {
+        background-color: #ddd;
+        cursor: pointer;
+    }
 }
 @media (max-width: 1024px) {
     nav#top-menu {

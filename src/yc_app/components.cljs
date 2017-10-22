@@ -50,7 +50,9 @@
 
      ;; TODO: populate categories
      (for [item (:top-menu-items @yc-app.core/app-state)]
-       [:div [:a {:href (str "/menu-" (:label item))} (:label item)]])]]])
+       [:div {:on-click (fn [_]
+                          (close-sidebar)
+                          (accountant/navigate! (str "/category/" (:id item))))} (:label item)])]]])
 
 (rum/defc menu-button []
   [:button.header-button {:on-click open-sidebar}])
@@ -76,7 +78,7 @@
   [:nav#top-menu
    [:ul
     (for [item (:top-menu-items @yc-app.core/app-state)]
-      [:li (str (:label item))])]])
+      [:li {:on-click (fn [_] (accountant/navigate! (str "/category/" (:id item))))} (str (:label item))])]])
 
 (rum/defc search-dialog []
   [:div#search-dialog])
