@@ -36,7 +36,6 @@
                (ycc/help-button)])
     (ycc/shop-button)
     (ycc/search-button)
-    [:div]
     [:div]]
    [:div#content-wrapper
     (page-contents (get-in (rum/react app-state) [:route :current-page]))]])

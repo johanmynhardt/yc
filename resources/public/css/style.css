@@ -202,6 +202,10 @@ div#content-wrapper {
     margin-bottom: 0.5em;
 }
 
+.padding-left {
+    padding-left: 1em;
+}
+
 nav#suggestions>ul {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -218,6 +222,14 @@ nav#suggestions>ul>li {
     text-align: center;
     text-transform: uppercase;
     font-size: smaller;
+}
+
+nav#suggestions>ul>li>a {
+    text-decoration: none;
+}
+
+nav#suggestions>ul>li>a:visited {
+    color: inherit;
 }
 
 #check-list ul li {
@@ -242,6 +254,10 @@ nav#suggestions>ul>li {
     button.headxer-button {
         display: none;
     }
+
+    .padding-left {
+        padding-left: 0;
+    }
 }
 
 @media (min-width: 640px) {
@@ -256,7 +272,7 @@ nav#suggestions>ul>li {
     }
 
     header#main-menu {
-        padding-left: 1em;
+        /*padding-left: 1em;*/
     }
 
     #side-menu>div.backdrop {

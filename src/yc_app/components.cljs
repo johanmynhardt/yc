@@ -40,4 +40,4 @@
   [:button {:on-click #(js/alert "Launch Search")} [:i.fa.fa-search.fa-lg]])
 
 (rum/defc widget-yc []
-  [:div.allcaps.bold "Yuppiechef"])
+  [:div.allcaps.bold.padding-left "Yuppiechef"])
