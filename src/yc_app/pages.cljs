@@ -19,8 +19,7 @@
     [:ul.no-list
      [:li [:span.fa.fa-check.fa-fw] [:b "11 Years"] " of Kitchen & Homeware"]
      [:li [:span.fa.fa-check.fa-fw] [:b "Free delivery"] " for orders over R300"]
-     [:li [:span.fa.fa-check.fa-fw] [:b "New store"] " open in Willowbridge"]]]
-   [:a {:href "/does-not-exist"} "/does-not-exist"]])
+     [:li [:span.fa.fa-check.fa-fw] [:b "New store"] " open in Willowbridge"]]]])
 
 ;;-------------------------------------------------------
 (defn not-found []
