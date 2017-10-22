@@ -109,7 +109,7 @@ div#content-wrapper {
 
 /* Focus Widget (Knives graphic with button) */
 .focus-widget {
-    background-image: url(../img/wusthof/wusthof_classic_3pc_512x256.jpg);
+    background-image: url(/img/wusthof/wusthof_classic_3pc_512x256.jpg);
     background-size: cover;
     background-position: 50%;
     display: grid;
@@ -179,6 +179,13 @@ div#content-wrapper {
     padding: 1em;
 }
 
+#side-menu-header *> .light-button {
+    
+    margin: 0.5em;
+    height: 1.2em;
+    vertical-align: middle;
+}
+
 #side-menu-content-wrapper {
     background-color: white;
     color: black;
@@ -244,6 +251,16 @@ nav#suggestions>ul>li>a:visited {
     text-size: smaller;
     text-align: center;
     text-transform: uppercase;
+}
+
+.person-badge {
+    border-radius: 50%;
+    width: 70px;
+    height: 70px;
+    background-size: cover;
+    background-position: 50%;
+    background-image: url(/img/people/person.png);
+    border: 0px solid white;
 }
 
 @media (max-width: 640px) {

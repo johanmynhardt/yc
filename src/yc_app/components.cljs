@@ -21,8 +21,10 @@
    [:div.contents.flex.vertical {:hidden (not (:show-sidebar @yc-app.core/app-state))}
     [:div#side-menu-header
      [:div.flex.horizontal
-      [:div.flex "Menu"]
-      [:div.fa.fa-close {:on-click close-sidebar}]]]
+      [:div.flex [:span.person-badge] [:span.flex] [:div.light-button "Account"] [:span.flex]]
+      [:div.fa.fa-close {:on-click close-sidebar}]]
+     [:h3 "Anonymous"]
+     [:p "Public User"]]
     [:div#side-menu-content-wrapper.with-shadow.flex.vertical.scroll 
      (for [it (range 0 40)]
        [:div [:a {:href (str "/menu-" it)} "item " it]])]]])
