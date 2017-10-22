@@ -40,7 +40,7 @@
     [:div#side-menu-content-wrapper.with-shadow.flex.vertical.scroll
      (for [item action-items]
        [:div {:on-click (fn [e] (close-sidebar) (accountant/navigate! (str "/action/" (:text item))))}
-        [:a.flex.horizontal 
+        [:span.flex.horizontal 
          [(:icon-div item)]
          [:div.margin-left (:text item)]]])
      
@@ -52,7 +52,10 @@
      (for [item (:top-menu-items @yc-app.core/app-state)]
        [:div {:on-click (fn [_]
                           (close-sidebar)
-                          (accountant/navigate! (str "/category/" (:id item))))} (:label item)])]]])
+                          (accountant/navigate! (str "/category/" (:id item))))}
+        [:span.flex.horizontal
+         [:div.fa.fa-tag]
+         [:div.margin-left (:label item)]]])]]])
 
 (rum/defc menu-button []
   [:button.header-button {:on-click open-sidebar}])
