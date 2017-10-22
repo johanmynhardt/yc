@@ -2,6 +2,7 @@
     (:require [rum.core :as rum]
               [accountant.core :as accountant]
               [bidi.bidi :as bidi]
+              [yc-app.components :as ycc]
               [yc-app.navigation :as navigation]
               [yc-app.pages :as pages]))
 
@@ -17,24 +18,13 @@
 (defmethod page-contents :home [] (pages/home))
 (defmethod page-contents :default [] (pages/not-found))
 
-
-(rum/defc menu-button []
-  [:button.header-button {:onClick #(js/console.log "echo")}])
-
-(rum/defc help-button []
-  [:div.fa.fa-question-circle-o.fa-lg])
-
-(rum/defc search-button []
-  [:button {:onClick #(js/alert "Launch Search")} [:i.fa.fa-search.fa-lg]])
-
-(rum/defc widget-yc []
-  [:div.allcaps.bold "Yuppiechef"])
-
 (rum/defc app < rum/reactive []
   [:div
+(ycc/side-menu)
    [:header#main-menu
-    (menu-button)
-    (widget-yc)
+    
+    (ycc/menu-button)
+    (ycc/widget-yc)
     [:div.inline-group
      [:div "Shop"]
      [:div "Registry"]
@@ -43,8 +33,8 @@
      [:div "Trade"]]
     [:div.flex]
     (comment  [:div.inline-group
-               (help-button)])
-    (search-button)
+               (ycc/help-button)])
+    (ycc/search-button)
     [:div]
     [:div]]
    [:div#content-wrapper

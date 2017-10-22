@@ -1,11 +1,12 @@
 (ns yc-app.pages
-  (:require [yc-app.navigation :refer [route-for]]))
-
+  (:require [yc-app.navigation :refer [route-for]]
+            [yc-app.components :as ycc]))
 
 (defn home []
   [:div
-   [:h2 "Home"]
-   [:a {:href "/does-not-exist"} "huh?"]])
+   (ycc/focus-widget "Some text")
+   [:br]
+   [:a {:href "/does-not-exist"} "/does-not-exist"]])
 
 ;;-------------------------------------------------------
 (defn not-found []

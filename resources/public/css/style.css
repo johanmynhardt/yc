@@ -89,6 +89,7 @@ header {
 
 div#content-wrapper {
     margin-top: 60px;
+    padding-top: 0.3em;
     margin-left: 1em;
     margin-right: 1em;
 }
@@ -97,9 +98,82 @@ div#content-wrapper {
     display: inline-flex;
 }
 
+.with-shadow {
+    box-shadow: 0 3px 10px 1px rgba(0, 0, 0, 0.5);
+}
+
 .inline-group>div {
     display: inline-flex;
     padding: 0 1em;
+}
+
+/* Focus Widget (Knives graphic with button) */
+.focus-widget {
+    width: 100%;
+    min-height: 150px;
+    border-radius: 0.2em;
+    box-shadow: 0 3px 10px 1px rgba(0, 0, 0, 0.5); 
+}
+
+.focus-widget>div {
+    margin: 0em;
+    padding: 0.5em;
+}
+
+.hidden {
+    display: none;
+}
+
+/* Side Menu */
+
+#side-menu {
+    background-color: white;
+    color: black;
+}
+
+#side-menu>div.contents {
+    background-color: #444;
+    color: white;
+    position: fixed;
+    top: 0;
+    height: 100%;
+    /*overflow-y: auto;*/
+    width: 75%;
+    max-width: 300px;
+    z-index: 201;
+}
+
+.scroll {
+    overflow-y: auto;
+}
+
+#side-menu>div.backdrop {
+    position: fixed;
+    top: 0;
+    background-color: black;
+    width: 100%;
+    opacity: 0.8;
+    height: 100%;
+    border: 0px solid red;
+    z-index: 200;
+}
+
+#side-menu-header {
+    padding: 1em;
+}
+
+#side-menu-content-wrapper {
+    background-color: white;
+    color: black;
+}
+
+#side-menu-content-wrapper>div {
+    padding: 1em;
+    border-bottom: 1px solid #eee;
+}
+
+[hidden] {
+    display: none;
 }
 
 @media (max-width: 640px) {
@@ -114,6 +188,7 @@ div#content-wrapper {
 
 @media (min-width: 640px) {
     div#content-wrapper {
+        padding-top: 3em;
         margin-left: 5em;
         margin-right: 5em;
     }
@@ -124,5 +199,9 @@ div#content-wrapper {
 
     header#main-menu {
         padding-left: 1em;
+    }
+
+    #side-menu>div.backdrop {
+        display: none;
     }
 }
