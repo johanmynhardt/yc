@@ -1,6 +1,5 @@
 (ns yc-app.components
-  (:require [rum.core :as rum]
-            [goog.events :as events]))
+  (:require [rum.core :as rum]))
 
 (defn button [text]
   [:div.paper-button text])
