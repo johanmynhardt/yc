@@ -10,10 +10,10 @@
    [:br]
    [:nav#suggestions
     [:ul
-     [:li [:a "Shop by " [:b "Brand"]]]
-     [:li [:a "Great " [:b "Gifts"]]]
-     [:li [:a "Most " [:b "Popular"]]]
-     [:li [:a "Items on " [:b "Sale"]]]]]
+     [:li [:a {:href (route-for :shop-brand)} "Shop by " [:b "Brand"]]]
+     [:li [:a {:href (route-for :gifts)} "Great " [:b "Gifts"]]]
+     [:li [:a {:href (route-for :popular)} "Most " [:b "Popular"]]]
+     [:li [:a {:href (route-for :sale)} "Items on " [:b "Sale"]]]]]
    
    [:div#check-list
     [:ul.no-list

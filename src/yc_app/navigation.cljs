@@ -3,6 +3,10 @@
 
 (def app-routes
   ["/" [["" :home]
+        ["shop-by-brand" :shop-brand]
+        ["gifts" :gifts]
+        ["popular" :popular]
+        ["sale" :sale]
         [true :not-found]]])
 
 (defn route-for [path & params]
