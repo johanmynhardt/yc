@@ -2,7 +2,7 @@
   (:require [rum.core :as rum]))
 
 (defn button [text]
-  [:div.paper-button text])
+  [:div.light-button text])
 
 (defn focus-widget [text]
   [:div.focus-widget

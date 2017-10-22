@@ -109,10 +109,24 @@ div#content-wrapper {
 
 /* Focus Widget (Knives graphic with button) */
 .focus-widget {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(1, 1fr);
+    grid-gap: 0.3em;
     width: 100%;
     min-height: 150px;
     border-radius: 0.2em;
     box-shadow: 0 3px 10px 1px rgba(0, 0, 0, 0.5); 
+}
+
+.focus-widget>div.light-button {
+    grid-column: 1;
+    grid-row: 2;
+    margin: 2em;
+    padding: 0.7em;
+    font-size: 7pt;
+    color: white;
+    background-color: black;
 }
 
 .focus-widget>div {
@@ -174,6 +188,47 @@ div#content-wrapper {
 
 [hidden] {
     display: none;
+}
+
+.no-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.margin-bottom {
+    margin-bottom: 0.5em;
+}
+
+nav#suggestions>ul {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 0.3em;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+nav#suggestions>ul>li {
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    padding: 1em;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: smaller;
+}
+
+#check-list ul li {
+    text-align: center;
+    margin-bottom: 0.5em;
+}
+
+.light-button {
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    padding: 1em;
+    text-size: smaller;
+    text-align: center;
+    text-transform: uppercase;
 }
 
 @media (max-width: 640px) {
