@@ -109,6 +109,9 @@ div#content-wrapper {
 
 /* Focus Widget (Knives graphic with button) */
 .focus-widget {
+    background-image: url(../img/wusthof/wusthof_classic_3pc_512x256.jpg);
+    background-size: cover;
+    background-position: 50%;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(1, 1fr);
