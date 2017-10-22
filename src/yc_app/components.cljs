@@ -2,6 +2,17 @@
   (:require [rum.core :as rum]
             [accountant.core :as accountant]))
 
+;; ------------- SIDE MENU ------------------------
+(def action-items
+  [{:text "Shipping to" :icon-div ':div.fa.fa-flag.fa-fw} ; TODO: shipping dialog + currency converter
+   {:text "Need Help?"  :icon-div ':div.fa.fa-question-circle.fa-fw}
+   {:text "Shop"        :icon-div ':div.fa.fa-shopping-cart.fa-fw}
+   {:text "Registry"    :icon-div ':div.fa.fa-heart.fa-fw}
+   {:text "Gifting"     :icon-div ':div.fa.fa-gift.fa-fw}
+   {:text "Subscriptions" :icon-div ':div.fa.fa-refresh.fa-fw}
+   {:text "Trade"       :icon-div ':div.fa.fa-briefcase.fa-fw}
+   ])
+
 (defn button [text]
   [:div.light-button text])
 
@@ -14,17 +25,6 @@
 
 (defn close-sidebar []
   (swap! yc-app.core/app-state assoc :show-sidebar false))
-
-;; ------------- SIDE MENU ------------------------
-(def action-items
-  [{:text "Shipping to" :icon-div ':div.fa.fa-flag.fa-fw}
-   {:text "Need Help?"  :icon-div ':div.fa.fa-question-circle.fa-fw}
-   {:text "Shop"        :icon-div ':div.fa.fa-shopping-cart.fa-fw}
-   {:text "Registry"    :icon-div ':div.fa.fa-heart.fa-fw}
-   {:text "Gifting"     :icon-div ':div.fa.fa-gift.fa-fw}
-   {:text "Subscriptions" :icon-div ':div.fa.fa-refresh.fa-fw}
-   {:text "Trade"       :icon-div ':div.fa.fa-briefcase.fa-fw}
-   ])
 
 (rum/defc side-menu []
   [:div#side-menu
@@ -49,8 +49,8 @@
      [:span.divider]
 
      ;; TODO: populate categories
-     (for [it (range 0 40)]
-       [:div [:a {:href (str "/menu-" it)} "item " it]])]]])
+     (for [item (:top-menu-items @yc-app.core/app-state)]
+       [:div [:a {:href (str "/menu-" (:label item))} (:label item)]])]]])
 
 (rum/defc menu-button []
   [:button.header-button {:on-click open-sidebar}])
@@ -71,3 +71,12 @@
   [:div.mw-640 
    [:div.fa.fa-user.fa-fw {:on-click open-sidebar}]]
   )
+
+(rum/defc top-menu []
+  [:nav#top-menu
+   [:ul
+    (for [item (:top-menu-items @yc-app.core/app-state)]
+      [:li (str (:label item))])]])
+
+(rum/defc search-dialog []
+  [:div#search-dialog])

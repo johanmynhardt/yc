@@ -42,11 +42,9 @@ html, body {
 .allcaps {
     text-transform: uppercase;
 }
-
 .bold {
     font-weight: bold;
 }
-
 header {
     background-color: black;
     color: white;
@@ -74,7 +72,6 @@ header button {
 .header-button {
     width: 50px;
 }
-
 header>div {
     transform: translate(0, 32%);
     display: block-inline;
@@ -82,31 +79,25 @@ header>div {
     height: 50px;
     margin: 0 0.4em;
 }
-
 header {
     display: block-inline;
 }
-
 div#content-wrapper {
     margin-top: 60px;
     padding-top: 0.3em;
     margin-left: 1em;
     margin-right: 1em;
 }
-
 .inline-group {
     display: inline-flex;
 }
-
 .with-shadow {
     box-shadow: 0 3px 10px 1px rgba(0, 0, 0, 0.5);
 }
-
 .inline-group>div {
     display: inline-flex;
     padding: 0 1em;
 }
-
 /* Focus Widget (Knives graphic with button) */
 .focus-widget {
     background-image: url(/img/wusthof/wusthof_classic_3pc_512x256.jpg);
@@ -119,9 +110,8 @@ div#content-wrapper {
     width: 100%;
     min-height: 150px;
     border-radius: 0.2em;
-    box-shadow: 0 3px 10px 1px rgba(0, 0, 0, 0.5); 
+    box-shadow: 0 3px 10px 1px rgba(0, 0, 0, 0.5);
 }
-
 .focus-widget>div.light-button {
     grid-column: 1;
     grid-row: 2;
@@ -131,23 +121,18 @@ div#content-wrapper {
     color: white;
     background-color: black;
 }
-
 .focus-widget>div {
     margin: 0em;
     padding: 0.5em;
 }
-
 .hidden {
     display: none;
 }
-
 /* Side Menu */
-
 #side-menu {
     background-color: white;
     color: black;
 }
-
 #side-menu>div.contents {
     background-color: #444;
     color: white;
@@ -159,11 +144,9 @@ div#content-wrapper {
     max-width: 300px;
     z-index: 201;
 }
-
 .scroll {
     overflow-y: auto;
 }
-
 #side-menu>div.backdrop {
     position: fixed;
     top: 0;
@@ -174,55 +157,42 @@ div#content-wrapper {
     border: 0px solid red;
     z-index: 200;
 }
-
 #side-menu-header {
     padding: 1em;
 }
-
 #side-menu-header *> .light-button {
-    
     margin: 0.5em;
     height: 1.2em;
     vertical-align: middle;
 }
-
 #side-menu-content-wrapper {
     background-color: white;
     color: black;
 }
-
 #side-menu-content-wrapper>div {
     padding: 1em;
     border-bottom: 0px solid #eee;
 }
-
 [hidden] {
     display: none;
 }
-
 .divider {
     border-bottom: 1px solid #eee;
 }
-
 .no-list {
     list-style-type: none;
     padding: 0;
 }
-
 .margin-bottom {
     margin-bottom: 0.5em;
 }
-
 .padding-left {
     padding-left: 1em;
 }
-
 .margin-left {
     margin-left: 1em;
 }
-
 /* ---- nav#suggestions ---- */
-
 nav#suggestions>ul {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -231,7 +201,6 @@ nav#suggestions>ul {
     padding: 0;
     margin: 0;
 }
-
 nav#suggestions>ul>li {
     border: 1px solid #ddd;
     border-radius: 3px;
@@ -240,22 +209,17 @@ nav#suggestions>ul>li {
     text-transform: uppercase;
     font-size: smaller;
 }
-
 nav#suggestions>ul>li>a {
     text-decoration: none;
 }
-
 nav#suggestions>ul>li>a:visited {
     color: inherit;
 }
-
 /* ---- #check-list ---- */
-
 #check-list ul li {
     text-align: center;
     margin-bottom: 0.5em;
 }
-
 .light-button {
     border: 1px solid #ddd;
     border-radius: 3px;
@@ -264,7 +228,6 @@ nav#suggestions>ul>li>a:visited {
     text-align: center;
     text-transform: uppercase;
 }
-
 .person-badge {
     border-radius: 50%;
     width: 70px;
@@ -274,62 +237,48 @@ nav#suggestions>ul>li>a:visited {
     background-image: url(/img/people/person.png);
     border: 0px solid white;
 }
-
 @media (max-width: 640px) {
     header#main-menu>div.inline-group {
         display: none;
     }
-
     button.headxer-button {
         display: none;
     }
-
     .padding-left {
         padding-left: 0;
     }
-
     .mw-640 {
         display: none;
     }
-
     nav#sugestions {
-        
     }
 }
-
 @media (min-width: 640px) {
     div#content-wrapper {
         padding-top: 1em;
         margin-left: 2em;
         margin-right: 2em;
     }
-
     button.header-button {
         display: none;
     }
-
     header#main-menu {
         /*padding-left: 1em;*/
     }
-
     #side-menu>div.backdrop {
         display: none;
     }
-
     .focus-widget {
         min-height: 200px;
         float:left;
         width: calc(100% - 250px);
     }
-
     .mw-640 {
         display: inherit;
     }
-
     .min-width-640.hide {
         display: none;
     }
-
     nav#suggestions>ul {
         display: grid;
         grid-template-columns: repeat(1, 1fr);
@@ -338,42 +287,56 @@ nav#suggestions>ul>li>a:visited {
         padding: 0;
         margin: 0;
     }
-
-    
     nav#suggestions>ul>li {
         margin-left: 1em;
-        margin-bottom: 0.3em;   
+        margin-bottom: 0.3em;
     }
-
     #check-list>ul {
         margin-top: 0em;
     }
-
     #check-list>ul>li {
-        
         margin-top: 1em;
     }
 }
-
 @media (min-width: 1024px) {
     div#content-wrapper {
-        padding-top: 3em;
+        padding-top: 0em;
         margin-left: auto;
         margin-right: auto;
         max-width: 900px;
     }
-
     #check-list>ul>li {
         display: inline-block;
         margin: 1em;
     }
-
     nav#suggestions>ul>li {
         margin-left: 1em;
-        margin-bottom: 0.3em;   
+        margin-bottom: 0.3em;
+    }
+    nav#top-menu {
+        display: inherit;
+        margin-top: 50px;
+        padding: 0.2em;
+        background-color: #f6f6f6;
+        border-bottom: 1px solid #eee;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    nav#top-menu>ul {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+        max-width: 990px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    nav#top-menu>ul>li {
+        display: inline-block;
+        padding: 1em;
     }
 }
-
-
-
-
+@media (max-width: 1024px) {
+    nav#top-menu {
+        display: none;
+    }
+}

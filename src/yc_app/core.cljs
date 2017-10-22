@@ -10,7 +10,22 @@
 
 ;; define your app data so that it doesn't get over-written on reload
 
-(defonce app-state (atom {:text "Hello world!"}))
+(defonce app-state (atom {:text "Hello world!"
+                          ;; :top-menu-items must be populated via api call to /api/categories
+                          :top-menu-items [{:label "Category 1",
+                                            :id 1,
+                                            :parent nil
+                                            }
+                                           {
+                                            :label "Category 2",
+                                            :id 2,
+                                            :parent nil
+                                            }
+                                           {
+                                            :label "Category 3",
+                                            :id 3,
+                                            :parent nil
+                                            }]}))
 
 ;---- link up page and route
 (defmulti page-contents identity)
@@ -20,9 +35,8 @@
 
 (rum/defc app < rum/reactive []
   [:div
-(ycc/side-menu)
+   (ycc/side-menu)
    [:header#main-menu
-    
     (ycc/menu-button)
     (ycc/widget-yc)
     [:div.inline-group
@@ -38,6 +52,7 @@
     (ycc/shop-button)
     (ycc/search-button)
     [:div]]
+   (ycc/top-menu)
    [:div#content-wrapper
     (page-contents (get-in (rum/react app-state) [:route :current-page]))]])
 
